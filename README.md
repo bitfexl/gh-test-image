@@ -7,11 +7,17 @@ Testing github container registry.
 **Build**
 
 ```
-docker build -t java-http-server-test-image .
+docker build -t ghcr.io/bitfexl/gh-test-image .
 ```
 
 **Run**
 
 ```
-docker run --rm -it -p 80:80 java-http-server-test-image
+docker run --rm -it -p 80:80 ghcr.io/bitfexl/gh-test-image
+```
+
+**Push**
+
+```
+docker push ghcr.io/bitfexl/gh-test-image
 ```
