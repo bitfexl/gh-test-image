@@ -7,6 +7,8 @@ import java.util.concurrent.Executors;
 
 public class HelloWorld {
     public static void main(String[] args) throws Exception {
+        System.out.println("Version: 1.2");
+
         final HttpServer server = HttpServer.create(new InetSocketAddress(Integer.parseInt(System.getenv("PORT"))), 0);
 
         server.createContext("/", exchange -> {
