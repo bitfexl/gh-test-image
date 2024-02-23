@@ -1,0 +1,4 @@
+services:
+  java-server:
+    image: ghcr.io/bitfexl/gh-test-image
+    restart: unless-stopped
