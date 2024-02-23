@@ -31,5 +31,5 @@ docker push ghcr.io/bitfexl/gh-test-image --all-tags
 **Remove**
 
 ```
-docker image rm ghcr.io/bitfexl/gh-test-image
+docker image rm -f $(docker images ghcr.io/bitfexl/gh-test-image -q)
 ```
