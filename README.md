@@ -7,13 +7,7 @@ Testing github container registry.
 **Build**
 
 ```
-docker build -t ghcr.io/bitfexl/gh-test-image:latest -t ghcr.io/bitfexl/gh-test-image:1.2 .
-```
-
-**Build (linux/arm)**
-
-```
-docker build --platform linux/arm64 -t ghcr.io/bitfexl/gh-test-image:latest -t ghcr.io/bitfexl/gh-test-image:1.2 .
+docker build -t ghcr.io/bitfexl/gh-test-image:latest -t ghcr.io/bitfexl/gh-test-image:1.4 .
 ```
 
 **Run**
@@ -32,4 +26,11 @@ docker push ghcr.io/bitfexl/gh-test-image --all-tags
 
 ```
 docker image rm -f $(docker images ghcr.io/bitfexl/gh-test-image -q)
+```
+
+**Build and push for amd and arm**
+
+```
+docker buildx create --use --platform linux/amd64,linux/arm64
+docker buildx build --push --platform linux/amd64,linux/arm64 -t ghcr.io/bitfexl/gh-test-image:latest -t ghcr.io/bitfexl/gh-test-image:1.4 .
 ```
